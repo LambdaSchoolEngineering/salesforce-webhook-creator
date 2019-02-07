@@ -10,7 +10,7 @@ public class @{name}WebhookTriggerTest {
 
         for (String fieldName : m.keySet()) {
             DescribeFieldResult f = m.get(fieldName).getDescribe();
-            if (!f.isNillable() && f.isCreateable() && !f.isDefaultedOnCreate()) {
+            if (!f.isNillable() && f.isCreateable() && !f.isDefaultedOnCreate() || (sobjectName == 'Account' && (f.getName() == 'FirstName' || f.getName() == 'LastName'))) {
                 if (f.getType() == DisplayType.Boolean) {
                     o.put(f.getName(), false);
                 }
