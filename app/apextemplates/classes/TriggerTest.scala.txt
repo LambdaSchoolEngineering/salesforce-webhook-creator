@@ -1,5 +1,5 @@
 @(name: String, sobject: String, events: List[String], url: String)@@isTest
-public class @{name}WebhookTriggerTest {
+public class @{name}WTT {
 
     static SObject mock(String sobjectName) {
         SObjectType t = Schema.getGlobalDescribe().get(sobjectName);
