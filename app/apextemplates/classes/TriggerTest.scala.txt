@@ -67,11 +67,11 @@ public class @{name}WTT {
         delete o;
         Test.stopTest();
 
-        System.assertEquals(200, Webhook.response.getStatusCode());
-        System.assertEquals('@url', Webhook.request.getEndpoint());
+        System.assertEquals(200, LambdaWebhook.response.getStatusCode());
+        System.assertEquals('@url', LambdaWebhook.request.getEndpoint());
 
-        if (Webhook.request != null) {
-            Map<String, Object> jsonResponse = (Map<String, Object>) JSON.deserializeUntyped(Webhook.request.getBody());
+        if (LambdaWebhook.request != null) {
+            Map<String, Object> jsonResponse = (Map<String, Object>) JSON.deserializeUntyped(LambdaWebhook.request.getBody());
             System.assertNotEquals(null, jsonResponse.get('userId'));
         }
     }

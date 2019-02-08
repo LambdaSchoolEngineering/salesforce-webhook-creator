@@ -1,4 +1,4 @@
-public class Webhook implements HttpCalloutMock {
+public class LambdaWebhook implements HttpCalloutMock {
 
     public static HttpRequest request;
     public static HttpResponse response;

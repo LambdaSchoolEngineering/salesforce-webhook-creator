@@ -5,8 +5,8 @@
     String eventTime = Trigger.isBefore ? 'before' : 'after';
     String eventName = Trigger.isInsert ? 'insert' : Trigger.isUpdate ? 'update' : Trigger.isDelete ? 'delete' : Trigger.isUndelete ? 'undelete' : 'unknown';
 
-    String content = Webhook.jsonContent(Trigger.new, Trigger.old, eventName + '.' + eventTime);
+    String content = LambdaWebhook.jsonContent(Trigger.new, Trigger.old, eventName + '.' + eventTime);
 
-    Webhook.callout(url, content);
+    LambdaWebhook.callout(url, content);
 
 }
