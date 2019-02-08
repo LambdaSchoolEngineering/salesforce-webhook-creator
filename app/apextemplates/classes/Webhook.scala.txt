@@ -31,7 +31,7 @@ public class LambdaWebhook implements HttpCalloutMock {
     public static void callout(String url, String content) {
 
         if (Test.isRunningTest()) {
-            Test.setMock(HttpCalloutMock.class, new Webhook());
+            Test.setMock(HttpCalloutMock.class, new LambdaWebhook());
         }
 
         Http h = new Http();
